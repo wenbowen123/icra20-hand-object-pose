@@ -1,0 +1,178 @@
+##Motoman left arm realsense
+cam_K: [616.5961303710938, 0.0, 307.6278076171875, 0.0, 616.59619140625, 239.68692016601562, 0.0, 0.0, 1.0]
+
+# K used in blender
+# cam_K: [619.2578, 0.0, 320,
+#         0.0, 619.2578, 240,
+#         0.0, 0.0, 1.0]
+
+
+
+# Motoman left arm camera xyz, q(xyzw)
+cam1_in_leftarm: [-0.004269333556294441,-0.007711530197411776,-0.08680825680494308,-0.006834600586444139,0.9986741542816162,0.04945759475231171,-0.01254322659224272]
+
+handbase_in_palm: [0    ,               -1             ,       0 ,0.009000016543892384,
+                  -0              ,      0          ,          1  ,0.08699987083673477,
+                  -1     ,              -0       ,             0 , 0.01899999752640724,
+                  -0         ,          -0         ,          -0      ,              1
+]
+
+out_dir: /home/bowen/debug
+rgb_path: /media/bowen/e25c9489-2f57-42dd-b076-021c59369fec/github/icra20-hand-object-pose/example/rgb7.png
+depth_path: /media/bowen/e25c9489-2f57-42dd-b076-021c59369fec/github/icra20-hand-object-pose/example/depth7.png
+palm_in_baselink: /media/bowen/e25c9489-2f57-42dd-b076-021c59369fec/github/icra20-hand-object-pose/example/palm_in_base7.txt
+leftarm_in_base: /media/bowen/e25c9489-2f57-42dd-b076-021c59369fec/github/icra20-hand-object-pose/example/arm_left_link_7_t_7.txt
+model_name: ellipse
+object_model_path: /media/bowen/e25c9489-2f57-42dd-b076-021c59369fec/catkin_ws/src/icra20_manipulation_pose/meshes/ellipse.ply
+object_mesh_path: /media/bowen/e25c9489-2f57-42dd-b076-021c59369fec/catkin_ws/src/icra20_manipulation_pose/meshes/raw/ellipse.obj
+ppf_path: /media/bowen/e25c9489-2f57-42dd-b076-021c59369fec/catkin_ws/src/icra20_manipulation_pose/meshes/ppf_ellipse
+
+#For Simulation data
+cam_in_world: /media/bowen/e25c9489-2f57-42dd-b076-021c59369fec/catkin_ws/src/icra20_manipulation_pose/simulation_data/cuboid_whitehand/000626/cam_in_world_pose.txt
+handbase_in_world: /media/bowen/e25c9489-2f57-42dd-b076-021c59369fec/catkin_ws/src/icra20_manipulation_pose/simulation_data/cuboid_whitehand/000626/visual_0_base_link.txt
+
+
+object_symmetry:   # 0 means complete symmetric, 360 means not symmetric
+  tless3:
+    x: 360
+    y: 0
+    z: 360
+  ellipse:
+    x: 180
+    y: 180
+    z: 180
+  cylinder:
+    x: 180
+    y: 180
+    z: 0
+  cuboid:
+    x: 180
+    y: 180
+    z: 90
+  mustard:
+    x: 360
+    y: 360
+    z: 360
+  tomato:
+    x: 0
+    y: 0
+    z: 0
+
+down_sample:
+  leaf_size: 0.005
+
+remove_noise:
+  radius: 0.02
+  min_number: 50
+
+
+
+# #NOTE: for simulation
+# hand_match:
+#   finger1_min_match: 5    #Near handbase left/right fingers
+#   finger2_min_match: 5   #Far handbase left/right fingers
+#   finger1_dist_thres: 0.005
+#   finger2_dist_thres: 0.005
+#   finger1_normal_angle: 60
+#   finger2_normal_angle: 60
+#   check_normal: true
+#   max_outter_pts: 300
+#   outter_pt_dist: 0.002
+#   outter_pt_dist_weight: 1
+#   planar_dist_thres: 0.001
+#   pso:
+#     n_pop: 15
+#     n_gen: 3
+#     check_freq: 10     # Use big value to let it run until max iter
+#     pso_par_c_cog: 0.1
+#     pso_par_c_soc: 0.9
+#     pso_par_initial_w: 0      # Particle velocity initial scaling factor
+# lcp:
+#   dist: 0.001
+#   normal_angle: 10
+
+
+#NOTE: for real
+hand_match:
+  finger1_min_match: 5   #Near handbase left/right fingers
+  finger2_min_match: 5    #Far handbase left/right fingers
+  finger1_dist_thres: 0.005
+  finger2_dist_thres: 0.005
+  finger1_normal_angle: 60
+  finger2_normal_angle: 60
+  check_normal: true
+  max_outter_pts: 300
+  outter_pt_dist: 0.002
+  outter_pt_dist_weight: 1
+  planar_dist_thres: 0.001
+  pso:
+    n_pop: 15
+    n_gen: 3   #Increase for better accuracy but slower
+    check_freq: 10     # Use big value to let it run until max iter
+    pso_par_c_cog: 0.1
+    pso_par_c_soc: 0.9
+    pso_par_initial_w: 0.0      # Particle velocity initial scaling factor
+lcp:
+  dist: 0.001
+  normal_angle: 10
+
+
+pose_estimator_wrong_ratio: 1
+render_roi_weight: 2.0
+render_keep_hypo: 0.3
+near_hand_dist: 0.003
+pose_estimator_use_physics: true
+pose_estimator_high_confidence_thres: 0.8
+icp_dist_thres: 0.01
+icp_angle_thres: 45
+collision_thres: 0.4
+non_touch_dist: 0.01
+collision_finger_dist: 0.012
+collision_finger_volume_ratio: 0.25
+
+super4pcs_sample_size: 100    #sample points on Q(model)
+super4pcs_overlap: 0.2
+super4pcs_delta: 0.003
+super4pcs_dispersion: 0.5
+super4pcs_success_quadrilaterals: 10   #Increase for better accuracy but slower
+super4pcs_max_normal_difference: -1    #Maximum angle (degrees) between corresponded normals.
+super4pcs_max_color_distance: -1
+super4pcs_max_time_seconds: 1
+
+urdf_path: /media/bowen/e25c9489-2f57-42dd-b076-021c59369fec/catkin_ws/src/icra20_manipulation_pose/meshes/hand_T42b.urdf
+
+
+#!NOTE convex_mesh is an approximated mesh for efficient collision checking. Can use the same path as "mesh" if dont worry about speed.
+Hand:
+  base_link:
+    mesh: /media/bowen/e25c9489-2f57-42dd-b076-021c59369fec/catkin_ws/src/icra20_manipulation_pose/meshes/raw/base.obj
+    convex_mesh: /media/bowen/e25c9489-2f57-42dd-b076-021c59369fec/catkin_ws/src/icra20_manipulation_pose/meshes/raw/base_convex.obj
+    cloud: /media/bowen/e25c9489-2f57-42dd-b076-021c59369fec/catkin_ws/src/icra20_manipulation_pose/meshes/raw/base.ply
+  swivel_1:
+    mesh: /media/bowen/e25c9489-2f57-42dd-b076-021c59369fec/catkin_ws/src/icra20_manipulation_pose/meshes/raw/swivel_t42.obj
+    convex_mesh: /media/bowen/e25c9489-2f57-42dd-b076-021c59369fec/catkin_ws/src/icra20_manipulation_pose/meshes/raw/swivel_t42_convex.obj
+    cloud: /media/bowen/e25c9489-2f57-42dd-b076-021c59369fec/catkin_ws/src/icra20_manipulation_pose/meshes/raw/swivel_t42.ply
+  swivel_2:
+    mesh: /media/bowen/e25c9489-2f57-42dd-b076-021c59369fec/catkin_ws/src/icra20_manipulation_pose/meshes/raw/swivel_t42.obj
+    convex_mesh: /media/bowen/e25c9489-2f57-42dd-b076-021c59369fec/catkin_ws/src/icra20_manipulation_pose/meshes/raw/swivel_t42_convex.obj
+    cloud: /media/bowen/e25c9489-2f57-42dd-b076-021c59369fec/catkin_ws/src/icra20_manipulation_pose/meshes/raw/swivel_t42.ply
+  finger_1_1:
+    mesh: /media/bowen/e25c9489-2f57-42dd-b076-021c59369fec/catkin_ws/src/icra20_manipulation_pose/meshes/raw/proximal_t42_airtight.obj
+    convex_mesh: /media/bowen/e25c9489-2f57-42dd-b076-021c59369fec/catkin_ws/src/icra20_manipulation_pose/meshes/raw/proximal_t42_convex.obj
+    cloud: /media/bowen/e25c9489-2f57-42dd-b076-021c59369fec/catkin_ws/src/icra20_manipulation_pose/meshes/raw/proximal_t42_airtight.ply
+  finger_1_2:
+    mesh: /media/bowen/e25c9489-2f57-42dd-b076-021c59369fec/catkin_ws/src/icra20_manipulation_pose/meshes/raw/distal_round_t42_airtight.obj
+    convex_mesh: /media/bowen/e25c9489-2f57-42dd-b076-021c59369fec/catkin_ws/src/icra20_manipulation_pose/meshes/raw/distal_round_t42_convex.obj
+    cloud: /media/bowen/e25c9489-2f57-42dd-b076-021c59369fec/catkin_ws/src/icra20_manipulation_pose/meshes/raw/distal_round_t42_airtight.ply
+  finger_2_1:
+    mesh: /media/bowen/e25c9489-2f57-42dd-b076-021c59369fec/catkin_ws/src/icra20_manipulation_pose/meshes/raw/proximal_t42_airtight.obj
+    convex_mesh: /media/bowen/e25c9489-2f57-42dd-b076-021c59369fec/catkin_ws/src/icra20_manipulation_pose/meshes/raw/proximal_t42_convex.obj
+    cloud: /media/bowen/e25c9489-2f57-42dd-b076-021c59369fec/catkin_ws/src/icra20_manipulation_pose/meshes/raw/proximal_t42_airtight.ply
+  finger_2_2:
+    mesh: /media/bowen/e25c9489-2f57-42dd-b076-021c59369fec/catkin_ws/src/icra20_manipulation_pose/meshes/raw/distal_round_t42_airtight.obj
+    convex_mesh: /media/bowen/e25c9489-2f57-42dd-b076-021c59369fec/catkin_ws/src/icra20_manipulation_pose/meshes/raw/distal_round_t42_convex.obj
+    cloud: /media/bowen/e25c9489-2f57-42dd-b076-021c59369fec/catkin_ws/src/icra20_manipulation_pose/meshes/raw/distal_round_t42_airtight.ply
+
+
+
+

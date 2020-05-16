@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>icra20_manipulation_pose</name>
+  <version>0.0.0</version>
+  <description>The icra20_manipulation_pose package</description>
+
+  <!-- One maintainer tag required, multiple allowed, one person per tag -->
+  <!-- Example:  -->
+  <maintainer email="wenbowenxjtu@gmail.com">bowen</maintainer>
+
+
+  <!-- One license tag required, multiple allowed, one license per tag -->
+  <!-- Commonly used license strings: -->
+  <!--   BSD, MIT, Boost Software License, GPLv2, GPLv3, LGPLv2.1, LGPLv3 -->
+  <license>TODO</license>
+  <buildtool_depend>catkin</buildtool_depend>
+  <build_depend>geometry_msgs</build_depend>
+  <build_depend>sensor_msgs</build_depend>
+  <build_depend>std_msgs</build_depend>
+  <build_depend>bowen_depth_sim</build_depend>
+  <!-- <build_depend>bowen_pose_estimate_msgs</build_depend> -->
+  <build_depend>pcl_ros</build_depend>
+  <build_depend>message_generation</build_depend>
+  <build_export_depend>geometry_msgs</build_export_depend>
+  <build_export_depend>sensor_msgs</build_export_depend>
+  <build_export_depend>std_msgs</build_export_depend>
+  <!-- <build_export_depend>bowen_pose_estimate_msgs</build_export_depend> -->
+  <exec_depend>message_runtime</exec_depend>
+  <exec_depend>geometry_msgs</exec_depend>
+  <exec_depend>sensor_msgs</exec_depend>
+  <exec_depend>std_msgs</exec_depend>
+  <exec_depend>bowen_depth_sim</exec_depend>
+  <!-- <exec_depend>bowen_pose_estimate_msgs</exec_depend> -->
+
+  <!-- The export tag contains other, unspecified, tags -->
+  <export>
+    <!-- Other tools can request additional information be placed here -->
+
+  </export>
+</package>

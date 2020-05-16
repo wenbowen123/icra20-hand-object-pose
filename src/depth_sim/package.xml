@@ -1,0 +1,52 @@
+<package>
+  <name>bowen_depth_sim</name>
+  <version>1.0.0</version>
+  <description>bowen_depth_sim</description>
+  <maintainer email="wenbowenxjtu@gmail.com">Bowen Wen</maintainer>
+
+  <license>BSD</license>
+
+  <!-- <url type="website"></url> -->
+  <!-- <url type="bugtracker"></url> -->
+
+  <author></author>
+
+  <!-- Dependencies which this package needs to build itself. -->
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <!-- Dependencies needed to compile this package. -->
+  <!-- <build_depend>geometry_msgs</build_depend> -->
+  <!-- <build_depend>sensor_msgs</build_depend> -->
+  <build_depend>roscpp</build_depend>
+  <build_depend>roslib</build_depend>
+  <build_depend>pcl_ros</build_depend>
+  <build_depend>cv_bridge</build_depend>
+  <build_depend>libpcl-all-dev</build_depend>
+  <build_depend>libglew-dev</build_depend>
+  <build_depend>glut</build_depend>
+
+  <!-- Dependencies needed after this package is compiled. -->
+  <!-- <run_depend>geometry_msgs</run_depend> -->
+  <!-- <run_depend>sensor_msgs</run_depend> -->
+  <run_depend>roscpp</run_depend>
+  <run_depend>roslib</run_depend>
+  <run_depend>pcl_ros</run_depend>
+  <run_depend>cv_bridge</run_depend>
+  <run_depend>libpcl-all</run_depend>
+  <run_depend>libpcl-all-dev</run_depend>
+  <run_depend>libglew-dev</run_depend>a
+  <run_depend>glut</run_depend>a
+
+  <!-- Dependencies needed only for running tests. -->
+  <!-- <test_depend>geometry_msgs</test_depend> -->
+  <!-- <test_depend>sensor_msgs</test_depend> -->
+  <!-- <test_depend>roscpp</test_depend> -->
+  <!-- <test_depend>roslib</test_depend> -->
+  <!-- <test_depend>pcl_ros</test_depend> -->
+  <!-- <test_depend>cv_bridge</test_depend> -->
+
+<export>
+    <cpp lflags="-Wl,-rpath,${prefix}/lib -L${prefix}/lib -lkinect_sim" cflags="`pkg-config --cflags eigen3` -I${prefix}/include"/>
+</export>
+
+</package>

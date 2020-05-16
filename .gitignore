@@ -1,0 +1,5 @@
+build/
+devel/
+*.pyc
+*.vscode*
+*catkin_workspace*
