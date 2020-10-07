@@ -132,6 +132,9 @@ Currently it only supports [Yale Hand T42](https://www.eng.yale.edu/grablab/open
 Due to the randomness and parallel implementation, the results may slightly vary each time you run, but the overall evaluation results should be similar to the paper. Sometimes it may be even possible to get higher results than in the paper (as we have observed for "cuboid"), that is because more base sampling time is permitted in current configuration. If other accuracy-speed trade-off is desired, feel free to play around the parameters, e.g. "super4pcs_success_quadrilaterals", "n_gen" in "config_autodataset.yaml".
 
 
+## Acknowledgement 
+We would like to acknowledge the support of NSF awards IIS-1734492, IIS-1723869, CCF-1934924. Award #1734492 promoted the collaboration with Aaron Dollar's GRAB Lab at Yale and the use of soft adaptive hands.  We would like to thank the GRAB Lab in their guidance for building and working with the adaptive hands. [Link to hand model used from the Yale OpenHand Project.](https://www.eng.yale.edu/grablab/openhand/model_t42.html)
+
 
 ## License
 ```
