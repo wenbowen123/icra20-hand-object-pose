@@ -46,12 +46,12 @@ Click to watch
 
 ## Datasets
 Download the datasets used for evaluation in the paper.
-* [real world data](https://drive.google.com/file/d/13GFZ2pGr5t5Au23JLcpcLfAlT6Oj9PDZ/view?usp=sharing) (986 samples) : Groundtruth 6D pose.
-* [synthetic data](https://drive.google.com/file/d/1-4OZtB5hPxlDhjBCJDGJlyJ0wCIG-rgv/view?usp=sharing) (12000 samples) :
+* [real world data](https://archive.cs.rutgers.edu/archive/a/2020/pracsys/bw344/icra2020/auto_collect.tar.gz) (986 samples) : Groundtruth 6D pose.
+* [synthetic data](https://archive.cs.rutgers.edu/archive/a/2020/pracsys/bw344/icra2020/simulation_data.tar.gz) (12000 samples) :
   1. Groundtruth 6D pose of everything including every finger.
   2. Groundtruth semantic segmentation of every link of the hand and object.
   3. Additional rendered images of objects under the same pose but not occluded by hand.
-* [object and hand CAD models, computed PPF features](https://drive.google.com/file/d/1R1TGeIVTLngj-ju1-n3C7XDzLvS4lugd/view?usp=sharing).
+* [object and hand CAD models, computed PPF features](https://archive.cs.rutgers.edu/archive/a/2020/pracsys/bw344/icra2020/meshes.tar.gz).
 
 Some example RGB images from real world data:
 ![](media/cuboid1.jpg)
