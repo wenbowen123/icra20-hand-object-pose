@@ -67,6 +67,7 @@ Some example RGB images from synthetic data:
 ## Install
 ```
 bash build.sh
+source devel/setup.bash
 ```
 
 ## Example run on real world data
